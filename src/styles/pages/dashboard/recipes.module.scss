@@ -1,0 +1,100 @@
+.dashboard {
+  .pagetitle {
+    @apply flex items-center;
+    .title {
+      @apply text-subtitlem lg:text-subtitle;
+      font-weight: 600;
+      @apply flex-grow;
+    }
+    .button {
+      .buttoninside {
+        @apply flex items-center text-white;
+        .plus {
+          @apply mr-2;
+        }
+        p {
+          font-size: 14px;
+          font-weight: normal;
+          transform: translateY(1px);
+        }
+      }
+    }
+  }
+  .recipecontainer:last-child {
+    border-bottom: solid 1px #E0E0E0;
+  }
+  .draggable {
+    border-top: solid 1px #E0E0E0;
+    transition: ease all 0.2s;
+    @apply flex items-center w-full;
+    z-index: 1;
+    a {
+      width: 100%;
+      z-index: 1;
+    }
+    .recipe {
+      @apply flex items-center w-full px-2 flex-grow;
+      transition: ease all 0.2s;
+      .checkbox {
+        @apply h-full pr-3 flex items-center h-full py-4;
+        border-right: solid 1px #E0E0E0;
+        input {
+          width: 16px;
+          height: 16px;
+          border-radius: 4px;
+          @apply checked:bg-black;
+        }
+        @apply mr-3;
+      }
+      .content {
+        @apply grid w-full grid-cols-3 gap-4;
+        .title {
+          font-size: 16px;
+          line-height: 16px;
+          font-weight: 500;
+          color: black;
+        }
+        font-size: 14px;
+        @apply text-faded;
+        &>* {
+          @apply flex items-center;
+          p {
+            max-width: 200px;
+            @apply truncate;
+          }
+        }
+      }
+    }
+    &:hover {
+      background: #F5F5F5;
+    }
+  }
+}
+.dropdown {
+  color: black;
+  top: 40px;
+  @apply absolute right-0 mt-2 w-36 origin-top-right bg-white shadow-default ring-1 ring-extrafaded focus:outline-none;
+  border-radius: 6px;
+  z-index: 1000;
+  .item {
+    z-index: 100;
+    border-radius: 6px;
+    @apply flex justify-between px-4 py-2 cursor-pointer;
+    font-size: 14px;
+    &:hover {
+      background: #F5F5F5;
+    }
+    &.delete{
+      @apply text-error;
+    }
+  }
+}
+.menu {
+  @apply flex-shrink-0 z-10;
+}
+.icon {
+  @apply px-1 py-2 cursor-pointer flex items-center;
+  .kebab {
+    transform: rotate(90deg);
+  }
+}

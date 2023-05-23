@@ -1,0 +1,112 @@
+.header {
+  @apply bg-green relative overflow-hidden;
+
+  .headergrid {
+    @apply grid grid-cols-2 lg:grid-cols-3 relative;
+    .title {
+      @apply relative z-10;
+      h1 {
+        font-family: "Monument Extended", sans-serif;
+        font-size: 5px;
+        @apply text-green;
+      }
+      p {
+        font-family: "Monument Extended", sans-serif;
+        font-size: 48px;
+        @screen md {
+          font-size: 64px;
+          line-height: 110px;
+          &:nth-child(3) {
+            transform: translateX(100px);
+          }
+        }
+      }
+    }
+
+    .featured {
+      @apply z-10 hidden lg:flex;
+      margin-top: 56px;
+      .star {
+        @apply mr-1 pt-1;
+      }
+      p {
+        max-width: 250px;
+      }
+    }
+
+    .image {
+      @apply absolute;
+      bottom: -60%;
+      right: -60%;
+      @screen lg {
+        right: 0;
+      }
+    }
+  }
+}
+
+
+.top {
+  @apply flex items-center w-full container;
+  .title {
+    width: 16%;
+    @apply mr-6;
+    font-family: "Monument Extended", sans-serif;
+    font-size: 20px;
+    height: 40px;
+    @screen sm {
+      transform: translateY(9px);
+    }
+    @screen md {
+      font-size: 24px;
+      transform: translateY(5px);
+    }
+    @screen lg {
+      font-size: 30px;
+      transform: translateY(0px);
+    }
+    @screen xl {
+      transform: translateY(-5px);
+      font-size: 34px;
+    }
+  }
+  .search {
+    @apply relative flex flex-grow items-center;
+    .icon {
+      @apply pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3;
+    }
+    input {
+      @apply pl-10 block w-full rounded-full sm:text-sm focus:ring-green;
+      padding: 9px 0px 9px 40px;
+      border: solid 1px #A3A29F;
+      font-size: 16px;
+      line-height: 16px;
+      background: transparent;
+    }
+  }
+  .filter {
+    width: 16%;
+    @apply ml-6;
+  }
+}
+
+.content {
+  @apply flex;
+  .categories {
+    width: 16%;
+    @apply flex flex-col mr-6;
+    > * {
+        @apply mb-3;
+    }
+  }
+  .recipes {
+    @apply flex flex-grow flex-col;
+    > * {
+        @apply mb-4;
+    }
+  }
+  .shoppinglist {
+    max-width: 16%;
+    @apply ml-6;
+  }
+}

@@ -1,0 +1,233 @@
+.dashboard {
+  .mobilenav {
+    @apply lg:hidden py-4 px-6;
+    border-bottom: 1px solid #DAD6D3;
+    .toggle {
+      @apply cursor-pointer;
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  .dasharea {
+    @apply flex relative;
+  }
+  .overlay {
+    z-index: 100;
+    background:black;
+    opacity: 0;
+    transition: ease background 0.3s;
+    &.open {
+      @apply top-0 left-0 w-full h-full fixed;
+      opacity: 0.4;
+      backdrop-filter: blur(10px);
+    }
+    @screen lg {
+      display: none;
+    }
+  }
+  .dashgrid {
+    @apply grid grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 py-6 px-6 lg:pl-0 lg:pr-6 gap-6;
+    width: 100%;
+    @screen lg {
+      width: calc(100% - 250px);
+    }
+  }
+  .settings {
+    @apply pt-10 pr-6;
+  }
+  .sectiontitle {
+    @apply text-subtitlem lg:text-subtitle;
+    font-weight: 600;
+  }
+  .savebutton {
+    @apply flex items-center justify-end;
+  }
+    .titlearea {
+      @apply flex items-start mb-12;
+      .recipetitle {
+        @apply text-subtitlem lg:text-subtitle flex-grow;
+        font-weight: 600;
+      }
+    }
+    .section {
+      @apply mb-12;
+      .titleinput {
+        @apply relative;
+        .errorcircle {
+          @apply pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3;
+        }
+      }
+      .input {
+        @apply mb-6;
+        label {
+          font-size: 14px;
+          @apply text-faded block mb-1;
+        }
+        input {
+          @apply border-faded;
+          border-radius: 6px;
+          width: 100%;
+          font-weight: 500;
+          &.errorinput {
+            @apply border-error;
+          }
+        }
+        .description {
+          @apply border-faded;
+          border-radius: 6px;
+          width: 100%;
+          font-weight: 500;
+          height: 200px;
+          &.errorinput {
+            @apply border-error;
+          }
+        }
+        &.groupname {
+          width: 200px;
+          @apply mr-2;
+        }
+        &.inputflex {
+          @apply flex items-center;
+          input, textarea {
+            width: auto;
+          }
+          .amount {
+            width: 92px;
+            @apply mr-2 ml-3;
+          }
+          .unit {
+            @apply mr-2;
+          }
+        }
+      }
+    }
+    .draggable {
+      @apply flex items-start;
+      .input {
+        width: 100%;
+        @apply mb-0;
+      }
+      .divider {
+        @apply w-full h-px bg-faded;
+      }
+    }
+    .buttoncontainer {
+      @apply inline-block;
+    }
+    .addbutton {
+      @apply flex items-center;
+      color: white;
+      p {
+        @apply pl-2;
+      }
+    }
+  }
+  .preview {
+    @apply hidden xl:block col-span-1 lg:col-span-2 pt-10 pb-8;
+    .title {
+      @apply text-titlem lg:text-title;
+      font-weight: 600;
+    }
+}
+.smalltitle {
+  @apply mt-6;
+  font-weight: 600;
+}
+.moderation {
+  @apply flex items-center;
+  .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: -5px;
+    @apply mr-2;
+    background: #F9D699;
+    &.approved {
+      @apply bg-success;
+    }
+    &.error {
+      @apply bg-error;
+    }
+  }
+}
+.statusexp {
+  font-size: 14px;
+  line-height: 14px;
+  @apply text-faded mt-3;
+}
+.errortext {
+  @apply text-error;
+}
+.selectcontainer {
+  @apply relative;
+}
+.select {
+  width: 100%;
+  border-radius: 6px;
+  @apply relative cursor-default border border-extrafaded bg-white py-2 pl-3 pr-10 text-left shadow-default focus:border-black focus:outline-none focus:ring-1 focus:ring-black;
+  text-transform: capitalize;
+}
+.selecticon {
+  @apply pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2;
+  svg {
+    path {
+      fill: #AAAAAA;
+    }
+  }
+}
+.selectoptions {
+  @apply absolute mt-1 max-h-56 w-full overflow-auto bg-white py-1 text-base shadow-lg ring-1 ring-extrafaded focus:outline-none;
+  z-index: 10;
+  border-radius: 6px;
+}
+.selectoption {
+  @apply py-1 pl-3 cursor-pointer;
+  &:hover {
+    background: #F6F2F0;
+  }
+}
+.selectplaceholder {
+  opacity: 0.6;
+  font-weight: 600;
+}
+.popup {
+  top: 50px;
+  @apply absolute bg-white z-10 text-error origin-top-right absolute right-0 shadow-default ring-1 ring-extrafaded focus:outline-none rounded-[6px] w-36;
+}
+.popup:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  transform: rotate(-45deg);
+  background: #fff;
+  position: absolute;
+  z-index: 9;
+  top: -6px;
+  right: 14px;
+  @apply border-t-extrafaded border border-r-extrafaded border-b-0 border-l-0;
+}
+.popupitem {
+  border-radius: 6px;
+  @apply flex justify-between px-4 py-2 cursor-pointer text-[14px] text-right;
+  &:hover {
+    background: #F5F5F5;
+  }
+}
+.stepimage {
+  @apply cursor-pointer bg-cover w-10 h-10 bg-center rounded-md hover:opacity-100 transition-all;
+  &.delete {
+    @apply opacity-50 flex items-center justify-center;
+  }
+  &.open {
+    @apply shadow-default;
+  }
+}
+.stepdescription {
+  @apply mt-2;
+  border: solid 1px #AAAAAA;
+  border-radius: 6px;
+  width: 100%;
+  font-weight: 500;
+}

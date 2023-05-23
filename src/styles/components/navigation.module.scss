@@ -1,0 +1,28 @@
+.nav {
+  @apply py-4 bg-green relative;
+
+  .navcontainer {
+    @apply flex items-center;
+  }
+  .logo {
+    @apply flex flex-grow;
+  }
+
+  .links {
+    @apply flex items-center;
+    .link a{
+      @apply flex items-center;
+    }
+    p:not(:last-child) {
+      @apply ml-6;
+    }
+    .caret {
+      @apply ml-1;
+    }
+  }
+  .user {
+    @apply flex items-center ml-16;
+    .login {
+    }
+  }
+}

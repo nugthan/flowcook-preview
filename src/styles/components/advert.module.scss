@@ -1,0 +1,12 @@
+.shoppinglist {
+  background: black;
+  color: white;
+  border-radius: 6px;
+  @apply shadow-default p-4 flex overflow-hidden;
+  transition: ease all 0.3s;
+  width: 200px;
+  .content {
+    @apply flex flex-grow w-full;
+    transition: ease all 0.3s;
+  }
+}

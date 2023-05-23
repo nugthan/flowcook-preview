@@ -1,0 +1,27 @@
+.dropdown {
+  color: black;
+  top: 40px;
+  @apply absolute right-0 mt-2 w-36 origin-top-right bg-white shadow-default ring-1 ring-extrafaded focus:outline-none;
+  border-radius: 6px;
+  z-index: 10000;
+  .item {
+    border-radius: 6px;
+    @apply flex justify-between px-4 py-2 cursor-pointer;
+    font-size: 14px;
+    &:hover {
+      background: #F5F5F5;
+    }
+    &.delete{
+      @apply text-error;
+    }
+  }
+}
+.menu {
+  @apply flex-shrink-0
+}
+.icon {
+  @apply px-1 py-2 cursor-pointer flex items-center;
+  .kebab {
+    transform: rotate(90deg);
+  }
+}

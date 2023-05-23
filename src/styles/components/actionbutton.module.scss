@@ -1,0 +1,87 @@
+.actionbutton {
+  @apply absolute right-0 top-0 mr-2 flex items-center rounded-md cursor-pointer;
+  background:black;
+  margin-top: 8px;
+  transition: ease all 0.3s;
+  p {
+    line-height: 12px;
+    font-size: 12px;
+    @apply mx-2 pt-0.5;
+    color: white;
+  }
+  button {
+    width: 32px;
+    height: 32px;
+    @apply rounded-md flex items-center justify-center z-10;
+    background:black;
+    transition: ease all 0.3s;
+    .inside {
+      @apply flex items-center justify-end relative overflow-hidden;
+    }
+    .icon {
+      @apply relative flex items-center p-1;
+      transform: translateX(-10px);
+      .arrow {
+        @apply absolute right-0;
+        transition: ease all 0.3s;
+      }
+      .cart {
+        transform: translateX(-20px);
+        transition: ease all 0.3s;
+      }
+      .checkmark {
+        @apply absolute right-0 p-1;
+        transform: translateX(-20px);
+        transition: ease all 0.3s;
+      }
+      .cross {
+        @apply absolute left-0 p-1;
+        transform: translateX(40px);
+        transition: ease all 0.3s;
+      }
+    }
+  }
+  &.clicked {
+    @apply bg-success;
+    transition: ease all 0.1s!important;
+    button {
+      @apply bg-success;
+      transition: ease all 0.1s!important;
+      .icon {
+        .arrow {
+          transform: translateX(40px);
+        }
+        .checkmark {
+          transform: translateX(5px);
+        }
+        .cart {
+          transform: translateX(40px);
+        }
+      }
+    }
+  }
+  &:hover {
+    button {
+      .arrow {
+        transform: translateX(40px);
+      }
+      .cart {
+        transform: translateX(10px);
+      }
+    }
+  }
+  &.toggleremove:hover {
+      @apply bg-error;
+        button {
+          @apply bg-error;
+          .icon {
+            .cross {
+              transform: translateX(15px);
+            }
+            .checkmark {
+              transform: translateX(-20px);
+            }
+          }
+        }
+  }
+}

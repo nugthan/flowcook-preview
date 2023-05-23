@@ -1,0 +1,182 @@
+@keyframes barber {
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.timeline {
+  user-select: none;
+  @apply bg-white mt-24 p-6;
+  border-radius: 24px;
+  .header {
+    @apply mb-12;
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    p {
+      max-width: 450px;
+    }
+  }
+}
+
+.actions {
+  @apply flex justify-end mb-4;
+  .clear {
+    @apply relative;
+    .fakeborder {
+      @apply absolute rounded-full;
+      background: repeating-linear-gradient(
+        45deg,
+        #D55454,
+        #D55454 10px,
+        #AA3E3E 10px,
+        #AA3E3E 20px
+      );
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      margin: 0;
+      transition: ease all 0.2s;
+      background-size: 200% 200%;
+      animation: barber 10s linear infinite;
+      &.confirm {
+        margin: -5px;
+      }
+    }
+    .clearcontent {
+      color: white;
+      position: relative;
+      &.confirm {
+        .cleartxt {
+          transform: translateY(-150%);
+        }
+        .confirmtxt {
+          opacity: 1;
+          transform: translateY(1%);
+        }
+      }
+      .cleartxt {
+        transition: all 0.2s ease-in-out;
+      }
+      .confirmtxt {
+        opacity: 0;
+        transform: translateY(150%);
+        position: absolute;
+        transition: cubic-bezier(0,.15,.38,1.5) 0.3s;
+        bottom: 0;
+      }
+    }
+
+  }
+}
+.ingredients {
+  @apply grid grid-cols-6 gap-6 mb-12;
+}
+.ingredient {
+  z-index: 1;
+  @apply py-2 px-3 bg-green flex items-end h-full overflow-hidden;
+  user-select: none;
+  color: #35604C;
+  border-radius: 8px;
+  p {
+    @apply flex-grow;
+    span {
+      font-weight: 600;
+    }
+  }
+  &.added {
+    display:none;
+  }
+}
+.step {
+  @apply py-2 px-3 bg-blue flex items-end h-full overflow-hidden;
+  user-select: none;
+  color: #3D5868;
+  border-radius: 8px;
+  p {
+    @apply flex-grow;
+    span {
+      font-weight: 600;
+    }
+  }
+  &.span {
+    @apply bg-yellow;
+    color: #766A3E;
+  }
+  input {
+    @apply rounded-full sm:text-sm focus:ring-green;
+  }
+}
+.layout {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  min-height: 400px;
+}
+.tooltip {
+  box-shadow: 0 0 40px -14px rgba(0,0,0,0.22)!important;
+  background-color: white;
+  border-radius: 6px;
+  z-index: 1000;
+  .edit {
+    @apply flex items-center;
+    .icon {
+      @apply p-2 flex items-center justify-center;
+      width: 36px;
+      height: 36px;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+      }
+      &:not(:last-child) {
+        @apply mr-2;
+      }
+    }
+  }
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-radius: 24px;
+  padding: 24px;
+  background-color: white;
+
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .subtitle {
+    max-width: 450px;
+    @apply mb-12;
+  }
+  input {
+    @apply block w-full rounded-full sm:text-sm focus:ring-green;
+    padding: 9px 0px 9px 18px;
+    border: solid 1px #A3A29F;
+    font-size: 16px;
+    line-height: 16px;
+    background: white;
+  }
+  .save {
+    color :white;
+    @apply mt-6 flex justify-end;
+    div:not(:last-child) {
+      @apply mr-4;
+    }
+  }
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}

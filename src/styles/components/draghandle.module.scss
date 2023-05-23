@@ -1,0 +1,25 @@
+.move {
+  @apply cursor-move;
+  svg {
+    path, rect {
+      transition: ease all 0.2s;
+      fill: #AAAAAA;
+    }
+    .rect2 {
+      transform: translate(100px)
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+    path, rect {
+      fill: #000000;
+    }
+  }
+  &:active {
+    rect {
+      width: 6px;
+      height: 4px;
+      transform: translate(4.9px, -1px);
+    }
+  }
+}

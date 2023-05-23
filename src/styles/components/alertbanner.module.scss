@@ -1,0 +1,21 @@
+.topbanner {
+  @apply absolute top-0 left-0 w-full py-2 text-center;
+  z-index: 100;
+  color: white;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  p {
+
+  }
+  &.banneropen {
+    transform: translateY(0);
+  }
+  .cross {
+    @apply cursor-pointer;
+    width: 16px;
+    height: 16px;
+    float:right;
+    margin-right: 16px;
+    margin-top: -20px;
+  }
+}

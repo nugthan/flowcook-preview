@@ -1,0 +1,30 @@
+.dashboard {
+  .dasharea {
+    @apply flex relative;
+  }
+
+  .overlay {
+    z-index: 100;
+    background: black;
+    opacity: 0;
+    transition: ease background 0.3s;
+
+    &.open {
+      @apply top-0 left-0 w-full h-full fixed;
+      opacity: 0.4;
+      backdrop-filter: blur(10px);
+    }
+
+    @screen lg {
+      display: none;
+    }
+  }
+
+  .dashgrid {
+    @apply grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 py-6 px-6 lg:pl-0 lg:pr-6 xl:pr-0 gap-6;
+    width: 100%;
+    @screen lg {
+      width: calc(100% - 250px);
+    }
+  }
+}

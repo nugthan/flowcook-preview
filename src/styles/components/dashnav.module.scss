@@ -1,0 +1,96 @@
+.nav {
+  @apply flex flex-col bg-white flex-shrink-0;
+  z-index: 1000;
+  position: fixed;
+  top:0;
+  transform: translateX(-300px);
+  transition: ease all 0.3s;
+
+  padding: 24px 24px 24px 32px;
+  width: 250px;
+  height: 100vh;
+  @screen lg {
+    background:none;
+    position: sticky;
+    transform: translateX(0);
+  }
+  &.open {
+    transform: translateX(0);
+  }
+
+  .close {
+    .closeicon {
+      width: 16px;
+      height: 16px;
+    }
+    @apply absolute mr-6 cursor-pointer p-4;
+    right: -72px;
+    top: 0;
+    @screen lg {
+      display: none;
+    }
+  }
+  .logo {
+    @apply flex w-full justify-center mt-9;
+  }
+  .link{
+    @apply flex items-center px-4 py-5 relative z-10;
+    border-radius: 6px;
+    p {
+      font-weight: 600;
+      line-height: 16px;
+    }
+    &.active {
+    }
+    .icon {
+      @apply mr-3;
+    }
+  }
+  .links {
+    @apply flex flex-col mt-20 relative flex-grow;
+  }
+  .animation {
+    transition: cubic-bezier(.37,0,0,.99) 0.3s;
+    @apply absolute w-full;
+    top:4px;
+    height: 48px;
+    border-radius: 6px;
+    background: #EEE6E2;
+  }
+  // active
+  .link:nth-child(1).active~.animation {
+    top:4px;
+  }
+  .link:nth-child(2).active~.animation {
+    top:62px;
+  }
+  .link:nth-child(3).active~.animation {
+    top:120px;
+  }
+  // hover
+  .link:nth-child(1):hover~.animation {
+      top:4px;
+  }
+  .link:nth-child(2):hover~.animation {
+    top:62px;
+  }
+  .link:nth-child(3):hover~.animation {
+    top:120px;
+  }
+
+  .logout {
+    @apply flex items-center mb-9 cursor-pointer;
+    .icon {
+      @apply flex items-center justify-center rounded-full mr-4;
+      width: 48px;
+      height: 48px;
+      background: black;
+    }
+    p {
+      font-weight: 600;
+    }
+  }
+}
+.admin {
+  border-top: solid 1px #E0E0E0;
+}

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-family: Jeko, sans-serif;
+  background: #FBF7F4;
+}
+.section {
+  @apply py-16;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.react-grid-item.react-grid-placeholder {
+  border-radius: 6px;
+  background: #F6F2F0!important;
+  opacity: 1!important;
+}
+
+
+.dashboard-w-full {
+  @apply col-span-2 lg:col-span-3 xl:col-span-4;
+  width: 100%;
+}
+
+input[type="email"], input[type="password"], input[type="text"] {
+  @apply w-full;
+  border-radius: 6px;
+}
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  @apply checked:bg-black mb-0;
+}

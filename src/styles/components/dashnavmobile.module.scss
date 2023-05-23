@@ -1,0 +1,17 @@
+.mobilenav {
+  @apply lg:hidden py-4 px-6;
+  border-bottom: 1px solid #DAD6D3;
+  .toggle {
+    @apply cursor-pointer;
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &.stick {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background: #FBF7F4;
+  }
+}

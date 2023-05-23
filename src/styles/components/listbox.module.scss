@@ -1,0 +1,31 @@
+.selectcontainer {
+  @apply relative;
+}
+.select {
+  width: 160px;
+  border-radius: 6px;
+  @apply relative cursor-default border border-faded bg-white py-2 pl-3 pr-10 text-left shadow-default focus:border-black focus:outline-none focus:ring-1 focus:ring-black;
+}
+.selecticon {
+  @apply pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2;
+  svg {
+    path {
+      fill: #AAAAAA;
+    }
+  }
+}
+.selectoptions {
+  @apply absolute mt-1 max-h-56 w-full overflow-auto bg-white py-1 text-base shadow-lg ring-1 ring-extrafaded focus:outline-none;
+  z-index: 10;
+  border-radius: 6px;
+}
+.selectoption {
+  @apply py-1 pl-3 cursor-pointer;
+  &:hover {
+    background: #F6F2F0;
+  }
+}
+.selectplaceholder {
+  opacity: 0.6;
+  font-weight: 600;
+}

@@ -1,0 +1,73 @@
+.timeline {
+  width: 100%;
+}
+.ingredients {
+  @apply grid grid-cols-6 gap-6 mt-6 mb-3;
+}
+.timelinearea {
+  @apply border border-extrafaded overflow-hidden;
+  min-height: 300px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.ingredient {
+  z-index: 1;
+  @apply py-2 bg-green flex items-end h-full overflow-hidden;
+  user-select: none;
+  color: #35604C;
+  border-radius: 8px;
+  p {
+    @apply flex-grow;
+    span {
+      font-weight: 600;
+    }
+  }
+  &.added {
+    display:none;
+  }
+}
+.dropdown .controls {
+  @apply flex items-center;
+}
+.step {
+  @apply py-2 bg-blue flex items-end h-full;
+  user-select: none;
+  color: #3D5868;
+  border-radius: 8px;
+  p {
+    @apply flex-grow;
+    span {
+      font-weight: 600;
+    }
+  }
+  &.span {
+    @apply bg-yellow;
+    color: #766A3E;
+  }
+  input {
+    @apply rounded-full sm:text-sm focus:ring-green;
+  }
+}
+.iteminner {
+  @apply flex items-center w-full h-full;
+  p {
+    @apply flex-grow pl-3 self-end truncate;
+  }
+}
+.timelineoptions {
+  @apply border border-extrafaded py-1 px-4 flex items-center justify-end w-full;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: none;
+}
+.columns {
+  @apply relative py-2 px-2;
+  border-radius: 6px;
+  transition: ease all 0.2s;
+  &:hover {
+    background-color: #F6F2F0;
+  }
+  &:active {
+    background-color: #F6F2F0;
+  }
+}

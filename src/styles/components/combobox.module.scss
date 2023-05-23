@@ -1,0 +1,23 @@
+.combobox {
+  @apply flex-grow;
+  input {
+    width: 100%!important;
+  }
+}
+.combocontainer {
+  @apply relative;
+}
+.combobutton {
+  @apply absolute inset-y-0 right-0 flex items-center pr-2
+}
+.combooptions {
+  @apply absolute mt-1 max-h-56 w-full overflow-auto bg-white py-1 text-base shadow-lg ring-1 ring-extrafaded focus:outline-none;
+  border-radius: 6px;
+  z-index: 10;
+}
+.combooption {
+  @apply py-1 pl-3 cursor-pointer;
+  &:hover {
+    background: #F6F2F0;
+  }
+}

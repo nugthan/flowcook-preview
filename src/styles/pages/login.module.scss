@@ -1,0 +1,72 @@
+.login {
+
+  @apply relative grid lg:grid-cols-2 h-screen;
+  background: white;
+  .image {
+    @apply absolute lg:relative h-screen lg:h-auto w-screen lg:w-full;
+    background: #F5F3EF;
+    @screen lg {
+      background: none;
+    }
+    .fullimage {
+      background-image: url('/images/login-full.png');
+      @apply lg:hidden h-full w-full;
+      background-size: cover;
+      background-position: bottom left;
+    }
+    .gridimage {
+      @apply hidden lg:block;
+    }
+  }
+  .form {
+    @apply max-w-md mx-auto relative flex flex-col justify-center lg:block;
+    .form_container {
+      @apply w-full bg-white lg:bg-none p-8 lg:mt-24;
+      border-radius: 6px;
+      .logo {
+        @apply mb-12;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: 600;
+      }
+      .inputs {
+        @apply mt-12;
+        div {
+        }
+      }
+      .mid {
+        @apply flex items-center mb-4;
+      }
+      .remember {
+        @apply flex items-center whitespace-nowrap;
+        input {
+          @apply mr-2;
+        }
+      }
+      .forgot {
+        @apply justify-end flex w-full;
+      }
+      input[type="email"], input[type="password"], input[type="text"] {
+        @apply w-full;
+      }
+    }
+  }
+
+}
+
+// error message
+.error {
+  @apply text-error text-center mt-2;
+}
+
+.passwordbar {
+  @apply mb-4;
+  transition: ease all 0.2s;
+  height: 21px;
+  &.hide {
+    @apply mb-0;
+    height: 0px;
+    overflow: hidden;
+  }
+}

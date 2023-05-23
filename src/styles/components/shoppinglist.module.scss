@@ -1,0 +1,93 @@
+@keyframes fade {
+  from {background: #6FA566;}
+    to {background: #000;}
+}
+@keyframes fadered {
+  from {background: #D55454;}
+  to {background: #000;}
+}
+
+
+.shoppinglist {
+  background: white;
+  border-radius: 6px;
+  @apply p-2 flex flex-col overflow-hidden;
+  width: 200px;
+  transition: ease all 0.3s;
+  height: calc(100vh - 48px);
+  .interaction {
+    @apply relative rounded-full overflow-hidden;
+    width: 100%;
+    button {
+      background: linear-gradient(90deg, #000 0%, #000 120%);
+      background-size: 210%;
+      background-position: 0%;
+      @apply rounded-full px-3;
+      height: 32px;
+      width: 100%;
+    }
+    &.active {
+      button {
+        background: linear-gradient(90deg, #000 0%, #000 50%, #6FA566 51%, #6FA566 120%);
+        background-size: 210%;
+        background-position: -94%;
+        transition: ease all 0.5s;
+        animation: fade 1s;
+        animation-delay: 0.5s;
+      }
+    }
+    &.deleted {
+      button {
+        background: linear-gradient(90deg, #000 0%, #000 50%, #D55454 51%, #D55454 120%);
+        background-size: 210%;
+        background-position: 94%;
+        transition: ease all 0.5s;
+        animation: fadered 1s;
+        animation-delay: 0.5s;
+      }
+    }
+  }
+  .content {
+    @apply mt-4;
+    transition: ease all 0.3s;
+    .title {
+      font-weight: 600;
+      font-size: 24px;
+      @apply mb-4 ml-3;
+    }
+    .list {
+      white-space: nowrap;
+      .item {
+        border-top: solid 1px #E0E0E0;
+        @apply flex items-center pl-3 h-full;
+        span {
+          font-weight: 600;
+        }
+        .checkbox {
+          @apply h-full pr-3 flex items-center h-full py-2;
+          border-right: solid 1px #E0E0E0;
+          input {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            @apply checked:bg-black;
+          }
+          @apply mr-3;
+        }
+      }
+    }
+  }
+  svg {
+    transform: scaleX(-100%);
+    transition: ease all 0.3s;
+  }
+  &.stickyactive {
+    top:24px;
+    position: sticky;
+    height: calc(100vh - 48px);
+  }
+  &.nosticky {
+    position: relative;
+    height: 100%;
+  }
+}
